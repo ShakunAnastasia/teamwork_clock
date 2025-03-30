@@ -7,7 +7,7 @@ from hand import Hour
 
 def main():
     reset()
-    speed(0)
+    speed(1)
     circle = Circle(250)
     hand = Hand(Second())
     hand.draw()

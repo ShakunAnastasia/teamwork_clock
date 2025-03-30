@@ -8,8 +8,7 @@ class Circle(Figure):
 
     def draw(self):
         up()
-        pencolor(self.color)
-        setpos(self._calc_position((0, -self.__radius)))
+        setpos(0, -250)
         down()
         circle(self.__radius)
         up()
