@@ -3,15 +3,14 @@ from figure import Figure
 import math
 
 class Hand(Figure):
-    def __init__(self, position_2, length, Second, Minute, Hour):
+    def __init__(self, length, Second, Minute, Hour):
         super().__init__()
-        self._position_2 = position_2
         self._length = length
         self._Second = Second
         self._Minute = Minute
         self._Hour = Hour
 
-    def calculate_position_2(self, position, length):
+    def calculate_position_2(self, __position, _length):
         x1, y1 = self.__position
         x2, y2 = (x1 + self._length * math.cos(90-self.rotation), y1 + self._length * math.sin(90-self.rotation))
         position_2 = x2, y2
@@ -21,6 +20,8 @@ class Hand(Figure):
         setpos(self.__position)
         down()
         goto(self.calculate_position_2(self.__position, self._length))
+        up()
+        setpos(self.__position)
 
 
 class Second(Hand):
