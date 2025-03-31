@@ -15,3 +15,7 @@ class Figure:
 
     def draw(self):
         pass
+
+from figure import Figure
+from turtle import *
+import math
