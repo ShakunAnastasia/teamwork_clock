@@ -1,6 +1,5 @@
 from turtle import *
 from Circle import Circle
-from numbers import Numbers
 from hand import Second, Minute, Hour
 from datetime import datetime
 
@@ -31,9 +30,6 @@ def main():
     second_hand = Second()
     minute_hand = Minute()
     hour_hand = Hour()
-
-    numbers = Numbers()
-    numbers.draw()
 
     update_clock()
     mainloop()
