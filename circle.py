@@ -9,16 +9,27 @@ class Circle(Figure):
         self.__radius = radius
 
     def draw(self):
+        fillcolor("tan")
+        begin_fill()
+        up()
+        setpos(0, -self.__radius)
+        down()
+        circle(self.__radius, self.__extent)
+        end_fill()
+        up()
+
+        color("dark slate gray")
         up()
         setpos(0, -self.__radius)
         down()
         circle(self.__radius, self.__extent)
         up()
+
         self.draw_numbers()
         self.draw_ticks()
 
     def draw_numbers(self):
-        font_size = int(self.__radius * 0.1)
+        font_size = int(self.__radius * 0.07)
         for i in range(1, 13):
             angle = math.radians(90 - i * 30)
             x = self.__radius * 0.85 * math.cos(angle)
@@ -26,7 +37,8 @@ class Circle(Figure):
             up()
             setpos(x, y - font_size / 2)
             down()
-            write(str(i), align="center", font=("Arial", font_size, "bold"))
+            color("dark slate gray")
+            write(str(i), align="center", font=("Arial Narrow", font_size, "normal"))
 
     def draw_ticks(self):
         for i in range(60):
@@ -38,5 +50,6 @@ class Circle(Figure):
             up()
             setpos(outer_x, outer_y)
             down()
+            color("dark slate gray")
             goto(inner_x, inner_y)
             up()
