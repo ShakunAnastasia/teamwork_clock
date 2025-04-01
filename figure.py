@@ -1,5 +1,3 @@
-import math
-
 class Figure:
     def __init__(self):
         self.__rotation = 0
@@ -15,7 +13,3 @@ class Figure:
 
     def draw(self):
         pass
-
-from figure import Figure
-from turtle import *
-import math

@@ -1,5 +1,5 @@
 from turtle import *
-from Circle import Circle
+from circle import Circle
 from hand import Second, Minute, Hour
 from datetime import datetime
 

@@ -1,5 +1,5 @@
-from turtle import *
 from figure import Figure
+from turtle import *
 import math
 
 class Hand(Figure):
@@ -7,7 +7,7 @@ class Hand(Figure):
         super().__init__()
         self._length = length
 
-    def calculate_position_2(self):
+    def calculate_position(self):
         x1, y1 = (0, 0)
         rad = math.radians(90 - self.rotation)
         x2 = x1 + self._length * math.cos(rad)
@@ -15,9 +15,10 @@ class Hand(Figure):
         return x2, y2
 
     def draw(self):
+        up()
         setpos(0, 0)
         down()
-        goto(self.calculate_position_2())
+        goto(self.calculate_position())
         up()
         setpos(0, 0)
 
